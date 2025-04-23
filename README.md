@@ -1,5 +1,7 @@
 🌎 Conversor de Moedas
+<br>
 📋 Descrição do Projeto
+<br>
 Este projeto é um Conversor de Moedas desenvolvido como parte do meu aprendizado em programação. O conversor permite que os usuários insiram valores em uma moeda e os convertam para outra moeda utilizando taxas de câmbio fixas para fins de exemplo.
 
 🚀 Funcionalidades
