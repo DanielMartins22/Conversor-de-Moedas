@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Importa a fonte Roboto do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Reset de estilos e fonte padrão */
 * {
     padding: 0;
     margin: 0;
@@ -9,30 +11,32 @@
     appearance: none;
 }
 
-body{
-    background: rgb(138,81,252);
-    background: linear-gradient(146deg, rgba(138,81,252,1) 0%, rgba(138,81,252,1) 52%, rgba(0,61,255,1) 63%);
+/* Fundo com gradiente */
+body {
+    background: linear-gradient(146deg, #8a51fc 0%, #8a51fc 52%, #003dff 63%);
 }
 
-.logo{
-    width: 300px;
-    height: 300px;
+/* Estilo da logo centralizada */
+.logo {
+    width: 250px;
+    height: 250px;
     display: block;
     margin: 20px auto;
-
 }
 
-.form-group{
+/* Container principal do formulário */
+.form-group {
     width: 375px;
-    height: 712px;
+    min-height: 712px;
     border-radius: 20px;
     background-color: #f4f4f4;
-    margin: 0 auto;
-    padding: 44px 24px 23px ;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
+    padding: 44px 24px 23px;
 }
 
-select , input{
+/* Inputs e selects padronizados */
+input,
+select {
     width: 327px;
     height: 48px;
     border-radius: 4px;
@@ -47,39 +51,32 @@ select , input{
     margin-bottom: 24px;
 }
 
-
-label{
+/* Estilo dos labels e <b> */
+label,
+b {
     color: #777;
     font-size: 14px;
-    font-weight: 400;
     line-height: 18px;
+}
+
+label {
+    font-weight: 400;
     display: block;
     margin-bottom: 6px;
 }
 
-
-label:nth-of-type(3){
-    color: #777;
-    font-size: 14px;
+/* Label do campo valor em negrito */
+label[for="valor"] {
     font-weight: 700;
-    line-height: 18px;
 }
 
+/* Negrito nos <b> */
 b {
-    color: #777;
-    font-size: 14px;
     font-weight: 700;
-    line-height: 18px;
 }
 
-valor{
-    color: #777;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 18px;
-}
-
-button{
+/* Botão de conversão */
+button {
     width: 327px;
     height: 48px;
     border-radius: 5px;
@@ -87,18 +84,20 @@ button{
     color: #FFF;
     font-size: 18px;
     font-weight: 700;
-    line-height: 18px;
     border: none;
     cursor: pointer;
+    transition: background 0.2s;
 }
 
-button:active{
+/* Cor do botão ao clicar */
+button:active {
     background-color: green;
 }
 
-section{
+/* Área dos resultados */
+section {
     width: 327px;
-    height: 276px;
+    min-height: 276px;
     border-radius: 20px;
     border: 1px solid #772FD3;
     margin-top: 36px;
@@ -108,36 +107,120 @@ section{
     align-items: center;
 }
 
-
-.currency-box{
+/* Caixa das moedas */
+.currency-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Imagens das moedas (todas as moedas) */
 .real,
-.dolar {
+.dolar,
+.euro,
+.libra {
     width: 44px;
     height: 44px;
 }
 
-.arrow{
+/* Imagem da seta */
+.arrow {
     width: 35px;
-    height: 49.939px;
-    margin: 15px 0 ;
+    height: 50px;
+    margin: 15px 0;
 }
 
-
-.moeda{
+/* Nome das moedas */
+.moeda {
     color: #777;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
 }
 
-.currency-to-convert , .currency-value{
+/* Valores das moedas */
+.currency-to-convert,
+.currency-value {
     color: #555;
     font-size: 20px;
     font-weight: 700;
     line-height: 18px;
+}
+
+/* Responsividade para telas de até 400px */
+@media (max-width: 400px) {
+    /* Ajusta largura dos principais elementos para caber na tela */
+    .form-group,
+    section,
+    input,
+    select,
+    button {
+        width: 95%;
+        min-width: 0;
+    }
+    /* Reduz a logo */
+    .logo {
+        width: 90vw;
+        height: auto;
+    }
+    /* Libera o scroll e altura automática em telas pequenas */
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+}
+
+/* Responsividade para telas de até 430px (ex: iPhone 16 Pro Max) */
+@media (max-width: 430px) {
+    /* Ajusta largura dos principais elementos para caber na tela */
+    .form-group,
+    section,
+    input,
+    select,
+    button {
+        width: 98%;
+        min-width: 0;
+    }
+    /* Reduz ainda mais a logo */
+    .logo {
+        width: 140px;
+        height: 140px;
+        margin: 10px auto;
+    }
+    /* Reduz o padding da section */
+    section {
+        padding: 6px;
+    }
+    /* Reduz tamanho das imagens das moedas */
+    .currency-box img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    /* Reduz tamanho da seta */
+    .arrow {
+        width: 22px;
+        height: 32px;
+        margin: 8px 0;
+    }
+    /* Ajusta tamanho das fontes dos valores */
+    .currency-to-convert,
+    .currency-value {
+        font-size: 18px;
+    }
+    /* Ajusta tamanho da fonte do nome da moeda */
+    .moeda {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    /* Libera o scroll e altura automática em telas pequenas */
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+}
+
+/* Bloqueia a rolagem em telas maiores */
+html, body {
+    height: 100vh;
+    overflow: hidden;
 }
