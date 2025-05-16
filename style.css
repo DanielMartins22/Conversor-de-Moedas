@@ -18,8 +18,8 @@ body {
 
 /* Estilo da logo centralizada */
 .logo {
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     display: block;
     margin: 20px auto;
 }
@@ -147,72 +147,65 @@ section {
     line-height: 18px;
 }
 
-/* Responsividade para telas de até 400px */
-@media (max-width: 400px) {
-    /* Ajusta largura dos principais elementos para caber na tela */
-    .form-group,
-    section,
-    input,
-    select,
-    button {
-        width: 95%;
-        min-width: 0;
-    }
-    /* Reduz a logo */
-    .logo {
-        width: 90vw;
-        height: auto;
-    }
-    /* Libera o scroll e altura automática em telas pequenas */
-    html, body {
-        overflow: auto;
-        height: auto;
-    }
-}
 
 /* Responsividade para telas de até 430px (ex: iPhone 16 Pro Max) */
+
 @media (max-width: 430px) {
-    /* Ajusta largura dos principais elementos para caber na tela */
-    .form-group,
-    section,
+    /* Deixa o container principal mais largo e com padding confortável */
+    .form-group {
+        width: 99vw;              /* Usa quase toda a largura da tela */
+        min-width: 0;
+        padding: 18px 2vw;        /* Padding maior para não grudar nas bordas */
+        border-radius: 14px;      /* Cantos mais arredondados */
+        margin: 0 auto 14px auto; /* Margem inferior maior */
+        min-height: unset;        /* Remove altura mínima */
+        height: auto;             /* Altura automática */
+    }
+    /* Section dos resultados também mais larga e confortável */
+    section {
+        width: 99vw;
+        padding: 14px;
+        border-radius: 14px;
+    }
+    /* Inputs, selects e botões maiores e mais fáceis de interagir */
     input,
     select,
     button {
-        width: 98%;
+        width: 95vw;
         min-width: 0;
+        font-size: 18px;          /* Fonte maior para melhor leitura */
+        height: 44px;             /* Altura maior para facilitar o toque */
+        padding-left: 14px;
+        margin-bottom: 14px;
     }
-    /* Reduz ainda mais a logo */
+    /* Logo maior e centralizada */
     .logo {
-        width: 140px;
-        height: 140px;
-        margin: 10px auto;
+        width: 120px;
+        height: 120px;
+        margin: 16px auto;
     }
-    /* Reduz o padding da section */
-    section {
-        padding: 6px;
-    }
-    /* Reduz tamanho das imagens das moedas */
+    /* Imagens das moedas maiores */
     .currency-box img {
-        width: 40px !important;
-        height: 40px !important;
+        width: 38px !important;
+        height: 38px !important;
     }
-    /* Reduz tamanho da seta */
+    /* Seta entre as moedas maior */
     .arrow {
-        width: 22px;
+        width: 24px;
         height: 32px;
-        margin: 8px 0;
+        margin: 10px 0;
     }
-    /* Ajusta tamanho das fontes dos valores */
+    /* Valores das moedas com fonte maior */
     .currency-to-convert,
     .currency-value {
         font-size: 18px;
     }
-    /* Ajusta tamanho da fonte do nome da moeda */
+    /* Nome das moedas com fonte maior */
     .moeda {
-        font-size: 18px;
-        margin-bottom: 5px;
+        font-size: 16px;
+        margin-bottom: 6px;
     }
-    /* Libera o scroll e altura automática em telas pequenas */
+    /* Permite rolagem vertical e altura automática em telas pequenas */
     html, body {
         overflow: auto;
         height: auto;

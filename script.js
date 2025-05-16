@@ -79,3 +79,5 @@ function changeCurrency() {
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
 convertSelect.addEventListener("change", changeCurrency)
+
+
