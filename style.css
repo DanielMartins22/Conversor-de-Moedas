@@ -11,12 +11,21 @@
     appearance: none;
 }
 
+/* Permite rolagem e altura automática */
+html,
+body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* Fundo com gradiente */
 body {
     background-image: url('./assets/grabient-HQNgTALANMDsCMAGGsDM06NjEBOEMArLABwyK6Hm4bwgFiiLxSMjyqugdA-1755288549397.png');
     background-size: cover;
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
 }
 
 /* Estilo da logo centralizada */
@@ -96,16 +105,15 @@ button {
     cursor: pointer;
     font-weight: 600;
     font-size: 15px;
+    border: none;
 }
 
 button:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
-    border: none;
     cursor: pointer;
     transition: background 0.2s;
     transform: translateY(-3px);
@@ -169,31 +177,31 @@ section {
     line-height: 18px;
 }
 
-
 /* Responsividade para telas de até 430px (ex: iPhone 16 Pro Max) */
-
 @media (max-width: 430px) {
+    
+    /* Logo menor em telas pequenas */
+    .logo {
+        width: 120px;
+        height: 120px;
+        margin: 16px auto;
+    }
 
     /* Deixa o container principal mais largo e com padding confortável */
     .form-group {
-        width: 99vw;
-        /* Usa quase toda a largura da tela */
+        width: 95vw;
+        max-width: 400px;
         min-width: 0;
-        padding: 18px 2vw;
-        /* Padding maior para não grudar nas bordas */
+        padding: 20px 16px;
         border-radius: 14px;
-        /* Cantos mais arredondados */
-        margin: 0 auto 14px auto;
-        /* Margem inferior maior */
+        margin: 0 auto 20px auto;
         min-height: unset;
-        /* Remove altura mínima */
         height: auto;
-        /* Altura automática */
     }
 
     /* Section dos resultados também mais larga e confortável */
     section {
-        width: 99vw;
+        width: 100%;
         padding: 14px;
         border-radius: 14px;
     }
@@ -202,33 +210,27 @@ section {
     input,
     select,
     button {
-        width: 95vw;
+        width: 100%;
         min-width: 0;
-        font-size: 18px;
-        /* Fonte maior para melhor leitura */
-        height: 44px;
-        /* Altura maior para facilitar o toque */
+        font-size: 16px;
+        height: 48px;
         padding-left: 14px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
 
-    /* Logo maior e centralizada */
-    .logo {
-        width: 120px;
-        height: 120px;
-        margin: 16px auto;
+    /* Imagens das moedas */
+    .real,
+    .dolar,
+    .euro,
+    .libra {
+        width: 38px;
+        height: 38px;
     }
 
-    /* Imagens das moedas maiores */
-    .currency-box img {
-        width: 38px !important;
-        height: 38px !important;
-    }
-
-    /* Seta entre as moedas maior */
+    /* Seta entre as moedas */
     .arrow {
-        width: 24px;
-        height: 32px;
+        width: 28px;
+        height: 38px;
         margin: 10px 0;
     }
 
@@ -240,21 +242,7 @@ section {
 
     /* Nome das moedas com fonte maior */
     .moeda {
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 6px;
     }
-
-    /* Permite rolagem vertical e altura automática em telas pequenas */
-    html,
-    body {
-        overflow: auto;
-        height: auto;
-    }
-}
-
-/* Bloqueia a rolagem em telas maiores */
-html,
-body {
-    height: 100vh;
-    overflow: hidden;
 }
