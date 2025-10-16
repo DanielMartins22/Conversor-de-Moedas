@@ -51,5 +51,4 @@ Formatação de números como moedas com Intl.NumberFormat
 🤝 Contribuições
 Contribuições são bem-vindas! Se você encontrar bugs ou tiver sugestões de melhorias, sinta-se à vontade para abrir um issue ou enviar um pull request.
 
-vamos ficar em manutenção 
 
