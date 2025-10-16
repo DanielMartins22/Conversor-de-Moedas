@@ -3,13 +3,6 @@ const convertButton = document.querySelector("#convert-button")
 const currencySelect = document.querySelector(".currency-select")
 const convertSelect = document.querySelector(".convert-currency")
 
-// Taxas de câmbio fixas (valores fictícios)
-const rates = {
-    BRL: 1,
-    USD: 6.09,
-    EUR: 6.42,
-    GBP: 7.74
-}
 
 // Dados das moedas para exibição dinâmica
 const currencyData = {
@@ -20,7 +13,7 @@ const currencyData = {
 }
 
 // Função principal que faz a conversão dos valores
-function convertValues() {
+async function convertValues () {
     const inputField = document.querySelector("#input-value")
     const inputCurrencyValue = Number(inputField.value.replace(",", "."))
     const currencyValueToConvert = document.querySelector(".currency-to-convert")
@@ -28,6 +21,18 @@ function convertValues() {
     const from = convertSelect.value
     const to = currencySelect.value
 
+    const data  = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,GBP-BRL").then(response => response.json())
+    
+    const rates = {
+        USD: Number(data.USDBRL.high),
+        EUR: Number(data.EURBRL.high),
+        GBP: Number(data.GBPBRL.high),
+        BRL: 1 // Real como base
+    }
+
+
+    console.log(data);
+    
     // Validação simples para evitar erros
     if (!inputField.value || isNaN(inputCurrencyValue)) {
         currencyValueToConvert.innerHTML = "Valor inválido"
